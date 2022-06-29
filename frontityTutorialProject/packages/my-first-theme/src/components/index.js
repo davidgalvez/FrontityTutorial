@@ -20,7 +20,7 @@ const Root = ({state}) => {
           }
         `}
       />
-      <Header>
+      <Header isPostType={data.isPostType}  isPage={data.isPage} >
         <HeaderContent>
           <h1>Hello Frontity</h1>
           <p>Current URL: {state.router.link}</p>
@@ -50,7 +50,7 @@ const Header = styled.header`
   background-color: #e5edee;
   border-width: 0 0 8px 0;
   border-style: solid;
-  border-color: maroon;
+  border-color: ${ props => !props.isPostType ?"maroon":props.isPage?"lightsteelblue":"lightseagreen"};
 
   h1 {
     color: #4a4a4a;

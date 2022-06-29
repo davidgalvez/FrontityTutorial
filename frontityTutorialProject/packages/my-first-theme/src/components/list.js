@@ -7,7 +7,7 @@ const List = ({ state }) => {
   const data = state.source.get(state.router.link)
 
   return (
-    <div>
+    <Items>
       {data.items.map((item) => {
         const post = state.source[item.type][item.id]
         return (
@@ -17,7 +17,7 @@ const List = ({ state }) => {
           </Link>
         )
       })}
-    </div>
+    </Items>
   )
 }
 
@@ -25,7 +25,7 @@ const Items = styled.div`
   & > a {
     display: block;
     margin: 6px 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: steelblue;
     text-decoration: none;
   }
