@@ -8,6 +8,7 @@ import List from "./list"
 import Post from "./post"
 import Page from "./page"
 import Loading from "./loading"
+import Error from "./error"
 
 
 const Root = ({state, actions}) => {
@@ -47,6 +48,7 @@ const Root = ({state, actions}) => {
           <Post when={data.isPost} />
           <Page when={data.isPage} />
           <Post when={data.isDestinations} />
+          <Error when={data.isError} />
         </Switch>
       </Main>
       
