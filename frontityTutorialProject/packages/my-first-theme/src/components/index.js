@@ -7,6 +7,7 @@ import Switch from "@frontity/components/switch"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
+import Loading from "./loading"
 
 
 const Root = ({state, actions}) => {
@@ -41,10 +42,11 @@ const Root = ({state, actions}) => {
       <hr/>
       <Main>
         <Switch>
+          <Loading when={data.isFetching} />
           <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
-          <Page when={data.isDestinations} />
+          <Post when={data.isDestinations} />
         </Switch>
       </Main>
       
