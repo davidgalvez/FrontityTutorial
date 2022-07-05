@@ -1,7 +1,7 @@
 // File: /packages/my-first-theme/src/components/post.js
 
 import React from "react"
-import { connect, styled } from "frontity"
+import { connect, styled, Head } from "frontity"
 import dayjs from "dayjs"
 
 const Post = ({ state, libraries }) => {
@@ -12,8 +12,12 @@ const Post = ({ state, libraries }) => {
   const Html2React = libraries.html2react.Component
 
 
-  return (
+  return (    
     <div>
+      <Head>
+        <title>{post.title.rendered}</title>
+        <meta name="description" content={post.excerpt.rendered} />
+      </Head>
       <h2>{post.title.rendered}</h2>
       <PostInfo>
         <p>
