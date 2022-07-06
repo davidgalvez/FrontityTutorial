@@ -4,10 +4,9 @@ import { connect, styled } from "frontity"
 import Link from "@frontity/components/link"
 
 const List = ({ state, actions }) => {
-  const data = state.source.get(state.router.link)
-
+  const data = state.source.get(state.router.link)  
   return (
-    <Items>
+    <Items isDestinationsArchive={data.isDestinationsArchive}>
       {data.items.map((item) => {
         const post = state.source[item.type][item.id]
         return (
@@ -46,7 +45,7 @@ const Items = styled.div`
     display: block;
     margin: 6px 0;
     font-size: 1.1em;
-    color: steelblue;
+    color: ${props => props.isDestinationsArchive?"lightseagreen":"steelblue"};
     text-decoration: none;
   }
 `
