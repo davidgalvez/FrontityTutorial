@@ -5,13 +5,16 @@ import { connect } from "frontity"
 
 const Page = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
+  console.log("dataSource",state.source);
+  console.log("dataType",data.type);
+  console.log("dataId",data.id);
   const post = state.source[data.type][data.id]
   const Html2React = libraries.html2react.Component
 
   return (
     <div>
       <h2>{post.title.rendered}</h2>
-      <Html2React html={page.content.rendered} />
+      <Html2React html={post.content.rendered} />
     </div>
   )
 }
